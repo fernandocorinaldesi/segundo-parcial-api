@@ -43,7 +43,9 @@ exports.deleteAll = async (req, res, next) => {
      if(total>=1) res.status(200).json({
         mensaje: "todos los tutoriales fueron eliminados.",
         total});
-     else  res.status(404).json("No se encontraron tutoriales para eliminar");    
+     else res.status(200).json({
+      mensaje: "no se encontraron tutoriales para eliminar",
+      total});    
   } catch (e) {
     res.status(500).json(e);
     next(e);
