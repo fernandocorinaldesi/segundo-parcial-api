@@ -48,4 +48,19 @@ exports.updateTutorialDB = async (tutorial,id) => {
   const updateRow = await pool.query(query);
   return updateRow.rowCount;
 }
+exports.existeTutorialDB = async (existe) => {
+  const query = {
+      text: 'SELECT * FROM TUTORIAL WHERE titulo = $1',
+      values: [existe.titulo]
+    }
+  const tutorial = await pool.query(query);
+
+  return tutorial.rows[0];
+};
+exports.esnumero=(x)=>{
+ 
+  return  !isNaN(x) && 
+  parseInt(Number(x)) == x && 
+  !isNaN(parseInt(x, 10));
+}
 

@@ -12,9 +12,16 @@ exports.getTutoriales = async (req, res, next) => {
 };
 
 exports.addTutorial = async (req, res, next) => {
-  try {
+   try {
+    const existe = await tutorialServices.existeTutorialDB(req.body)
+    if(existe!=undefined){
+     res.status(409).json("el tutorial ya existe");
+    }
+    else{
     const tutorialAdd = await tutorialServices.addTutorialDB(req.body);
     res.status(201).json({ status: "success", message: `${tutorialAdd} tutorial agregado.`, tutorial: req.body });
+    }
+    
   } catch (e) {
     res.status(500).json(e);
     next(e);
@@ -72,13 +79,22 @@ exports.modTutorial = async (req, res, next) => {
 exports.findById = async (req, res, next) => {
   const id = req.params.id;
   try {
-    const tutorial = await tutorialServices.getTutorialDB(id);
-    if (tutorial !== undefined) res.status(200).json(tutorial);
-    else res.status(404).json("No encontrado");
-  } catch (e) {
+    if(tutorialServices.esnumero(id)){
+      const tutorial = await tutorialServices.getTutorialDB(id);
+    if (tutorial !== undefined){
+      res.status(200).json(tutorial);
+    } 
+    else {
+      res.status(404).json("No encontrado");}
+    }
+    else{
+      res.status(400).json();
+    }
+ } catch (e) {
     res.status(500).json(e);
     next(e);
   }
 };
+
 
 
