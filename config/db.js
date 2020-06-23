@@ -6,8 +6,8 @@ const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_P
 
 const pool = new Pool({
   connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
-   //ssl : isProduction
-  ssl: {rejectUnauthorized: false} //se puso en falso para el deploy en heroku
+  ssl : isProduction
+  //ssl: {rejectUnauthorized: false} //se puso en falso para el deploy en heroku
 })
 
 module.exports =  { pool };
