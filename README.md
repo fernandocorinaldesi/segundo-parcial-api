@@ -54,8 +54,11 @@ Habiendo consultado diferentes fuentes y documentos, y teniendo en cuenta el dis
 Main layer     | Type   | Descripcion
 --------------------- | -------------------- | ---------------------
 HTTP logic layer | Routes + Controllers | Esta capa manejara las peticiones http y las routeara a su correspondiente controllador
-Business logic layer | Services + Data Access | Contiene la logica de negocio asi como el acceso a nuestra base de datos, esta fue simplicada un poco teniendo en cuenta el tamaño de la api y el hecho de no usar un orm junto  con un modelo
+Business logic layer | Services + Data Access | Contiene la logica de negocio asi como el acceso a nuestra base de datos, esta fue simplicada un poco teniendo en cuenta el tamaño de la api y el hecho de no usar un orm junto  con un modelo  
 
+
+Estructura :  
+![screenshoot](https://i.ibb.co/yy43Hm0/estructura.jpg)
 ### Deploy  
 [https://segundo-parcial-api.herokuapp.com/api/tutoriales](https://segundo-parcial-api.herokuapp.com/api/tutoriales)
 
