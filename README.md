@@ -14,8 +14,12 @@
  
 
 ### Empezando
-La consigna de este parcial es realizar una api sobre tutoriales con express.js y base de datos postgresql.  
-Los tutoriales deberan tener la siguiente estructura :  
+El presente trabajo práctico de la cursada Práctica Integradora correspondiente a la carrera Analista Programador Universitario de la Universidad Nacional de José se Paz tiene por objetivo crear 2 aplicaciones web que trabajen en conjunto para poder simular el registro de todos los tutoriales que la Universidad pública.
+La primera aplicación será una API sobre los tutoriales a través de la cual se podrán realizar las operaciones básicas de registración, actualización, borrado y consulta de los tutoriales.
+La segunda aplicación será la interface de usuario que permitirá navegar por las distintas opciones de la página web para realizar las operaciones a través de una interface amigable y fácil de usar. Esta aplicación deberá realizar las distintas operaciones por medio de la API.  
+
+
+Para el desarrollo de la api se define el objeto tutorial con los siguientes atributos: 
 {
 
         "id": 3,
@@ -28,23 +32,28 @@ Los tutoriales deberan tener la siguiente estructura :
 
 }
 
-Funciones disponibles:
+Funciones disponibles api:
 * Operaciones crud
+Repositorio de la api : [https://github.com/fernandocorinaldesi/segundo-parcial-api](https://github.com/fernandocorinaldesi/segundo-parcial-api)  
 
+Funciones disponibles front en react :
+* Operaciones crud
+* Busqueda dinamica en el front
+* Función experimental copia de seguridad en csv de la Base de datos
+* Función experimental exportacion hacia la api de la base de datos en csv
  
 ### Requerimientos 
 
  - Nodejs  (v7 o superior) instalado
- - Postgrsql (v9.4 o superior) instalado
 
 ### Dependencias 
 
- - express
- - body-parser
- - nodemon
- - dotenv
- - pg
- - cors
+ - react-bootstrap
+ - react-papaparse
+ - @material-ui/core
+ - @material-ui/icons
+ - react-csv
+ - react-fade-in
  
 
 ### Solución   
@@ -60,7 +69,7 @@ Business logic layer | Services + Data Access | Contiene la logica de negocio as
 Estructura :  
 ![screenshoot](https://i.ibb.co/yy43Hm0/estructura.jpg)
 ### Deploy  
-[https://segundo-parcial-api.herokuapp.com/api/tutoriales](https://segundo-parcial-api.herokuapp.com/api/tutoriales)
+[https://react-front-api.herokuapp.com/](https://react-front-api.herokuapp.com/
 
 ### Uso  
 
